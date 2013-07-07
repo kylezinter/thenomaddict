@@ -1,10 +1,11 @@
-$(document).ready(function() {
+$(window).load(function() {
 
-	
+
 	// var heroSize = $('.tourHero').css('height');
 	// $('.tourSection').css('margin-top', heroSize);
 
 	$(window).on("scroll", function() {
+		var heroSize = $('.tourHero').css('height');
 		var scroll = $(window).scrollTop();
 
 		if (scroll > 300)
@@ -41,6 +42,10 @@ $(document).ready(function() {
 		{
 			$('.tourName').css('opacity', '1');
 			$('.cityStats').css('opacity', '1');
+		}
+		if(scroll > heroSize-50)
+		{
+
 		}
 
 	});

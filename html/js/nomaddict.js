@@ -1,9 +1,24 @@
 $(document).ready(function() {
-	
+	// no need to do anything here yet
+});
+
+$(window).load(function() {
+
+			$('.logoContainer').css('top', '676.6875px').css('position', 'absolute');
+
 		$(window).on("scroll", function() {
 		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		var scrollStopper = 0;
 
-		if (scroll > 440) {
+		if (windowHeight > 448) {
+			scrollStopper = 670;
+		}
+		else {
+			scrollStopper = 820;
+		}
+
+		if (scroll > scrollStopper) {
 			var top = $('.logoContainer').offset().top;
 			var unotop = $('.uno').offset().top;
 			var dostop = $('.dos').offset().top;
@@ -11,6 +26,8 @@ $(document).ready(function() {
 			var quatrotop = $('.quatro').offset().top;
 			var cincotop = $('.cinco').offset().top;
 			var seistop = $('.seis').offset().top;
+			var sietetop = $('.siete').offset().top;
+			var ochotop = $('.ocho').offset().top;
 
 			$('.logoContainer').css('top', top).css('position', 'absolute');
 			$('.uno').css('top', unotop).css('position', 'absolute');
@@ -19,15 +36,31 @@ $(document).ready(function() {
 			$('.quatro').css('top', quatrotop).css('position', 'absolute');
 			$('.cinco').css('top', cincotop).css('position', 'absolute');
 			$('.seis').css('top', seistop).css('position', 'absolute');
+			$('.siete').css('top', sietetop).css('position', 'absolute');
+			$('.ocho').css('top', ochotop).css('position', 'absolute');
 		}
 		else {
-			$('.logoContainer').css('top', '30%').css('position', 'fixed');
-			$('.uno').css('top', '55%').css('position', 'fixed');
-			$('.dos').css('top', '57%').css('position', 'fixed');
-			$('.tres').css('top', '70%').css('position', 'fixed');
-			$('.quatro').css('top', '74%').css('position', 'fixed');
-			$('.cinco').css('top', '85%').css('position', 'fixed');
-			$('.seis').css('top', '90%').css('position', 'fixed');
+			$('.logoContainer').css('top', '2%').css('position', 'fixed');
+			if (windowHeight > 448) {
+			$('.uno').css('top', '29em').css('position', 'fixed');
+			$('.dos').css('top', '31em').css('position', 'fixed');
+			$('.tres').css('top', '40em').css('position', 'fixed');
+			$('.quatro').css('top', '42em').css('position', 'fixed');
+			$('.cinco').css('top', '51em').css('position', 'fixed');
+			$('.seis').css('top', '53em').css('position', 'fixed');
+			$('.siete').css('top', '62em').css('position', 'fixed');
+			$('.ocho').css('top', '64em').css('position', 'fixed');
+		}
+		else {
+						$('.uno').css('top', '10em').css('position', 'fixed');
+			$('.dos').css('top', '13em').css('position', 'fixed');
+			$('.tres').css('top', '18em').css('position', 'fixed');
+			$('.quatro').css('top', '20em').css('position', 'fixed');
+			$('.cinco').css('top', '26em').css('position', 'fixed');
+			$('.seis').css('top', '28em').css('position', 'fixed');
+			$('.siete').css('top', '35em').css('position', 'fixed');
+			$('.ocho').css('top', '37em').css('position', 'fixed');
+		}
 		}
 
 		if (scroll > 0) {
@@ -36,35 +69,47 @@ $(document).ready(function() {
 		else {
 			$('.uno').hide();
 		}
-		if (scroll > 80) {
+		if (scroll > 100) {
 			$('.dos').show();
 		}
 		else {
 			$('.dos').hide();
 		}
-		if (scroll > 120) {
+		if (scroll > 160) {
 			$('.tres').show();
 		}
 		else {
 			$('.tres').hide();
 		}
-		if (scroll > 190) {
+		if (scroll > 220) {
 			$('.quatro').show();
 		}
 		else {
 			$('.quatro').hide();
 		}
-		if (scroll > 230) {
+		if (scroll > 290) {
 			$('.cinco').show();
 		}
 		else {
 			$('.cinco').hide();
 		}
-		if (scroll > 270) {
+		if (scroll > 360) {
 			$('.seis').show();
 		}
 		else {
 			$('.seis').hide();
+		}
+				if (scroll > 400) {
+			$('.siete').show();
+		}
+		else {
+			$('.siete').hide();
+		}
+				if (scroll > 460) {
+			$('.ocho').show();
+		}
+		else {
+			$('.ocho').hide();
 		}
 	});
 	
