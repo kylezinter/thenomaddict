@@ -1,24 +1,16 @@
 $(document).ready(function() {
-	// no need to do anything here yet
+	$(this).scrollTop(0);
 });
 
 $(window).load(function() {
 
-			$('.logoContainer').css('top', '676.6875px').css('position', 'absolute');
-
-		$(window).on("scroll", function() {
+	$(window).on("scroll", function() {
 		var scroll = $(window).scrollTop();
 		var windowHeight = $(window).height();
-		var scrollStopper = 0;
+		var bottomOfLogo = $('.logoContainer').offset().top+$('.logoContainer').outerHeight(true);
+		var bottomOfHeader = $('.homeHeader').offset().top+$('.homeHeader').outerHeight(true);
 
-		if (windowHeight > 448) {
-			scrollStopper = 670;
-		}
-		else {
-			scrollStopper = 820;
-		}
-
-		if (scroll > scrollStopper) {
+		if (scroll+$('.logoContainer').outerHeight(true) > bottomOfHeader) {
 			var top = $('.logoContainer').offset().top;
 			var unotop = $('.uno').offset().top;
 			var dostop = $('.dos').offset().top;
@@ -39,28 +31,28 @@ $(window).load(function() {
 			$('.siete').css('top', sietetop).css('position', 'absolute');
 			$('.ocho').css('top', ochotop).css('position', 'absolute');
 		}
-		else {
+		if (scroll+$('.logoContainer').outerHeight(true) < bottomOfHeader) {
 			$('.logoContainer').css('top', '2%').css('position', 'fixed');
 			if (windowHeight > 448) {
-			$('.uno').css('top', '29em').css('position', 'fixed');
-			$('.dos').css('top', '31em').css('position', 'fixed');
-			$('.tres').css('top', '40em').css('position', 'fixed');
-			$('.quatro').css('top', '42em').css('position', 'fixed');
-			$('.cinco').css('top', '51em').css('position', 'fixed');
-			$('.seis').css('top', '53em').css('position', 'fixed');
-			$('.siete').css('top', '62em').css('position', 'fixed');
-			$('.ocho').css('top', '64em').css('position', 'fixed');
-		}
-		else {
-						$('.uno').css('top', '10em').css('position', 'fixed');
-			$('.dos').css('top', '13em').css('position', 'fixed');
-			$('.tres').css('top', '18em').css('position', 'fixed');
-			$('.quatro').css('top', '20em').css('position', 'fixed');
-			$('.cinco').css('top', '26em').css('position', 'fixed');
-			$('.seis').css('top', '28em').css('position', 'fixed');
-			$('.siete').css('top', '35em').css('position', 'fixed');
-			$('.ocho').css('top', '37em').css('position', 'fixed');
-		}
+				$('.uno').css('top', '29em').css('position', 'fixed');
+				$('.dos').css('top', '31em').css('position', 'fixed');
+				$('.tres').css('top', '40em').css('position', 'fixed');
+				$('.quatro').css('top', '42em').css('position', 'fixed');
+				$('.cinco').css('top', '51em').css('position', 'fixed');
+				$('.seis').css('top', '53em').css('position', 'fixed');
+				$('.siete').css('top', '62em').css('position', 'fixed');
+				$('.ocho').css('top', '64em').css('position', 'fixed');
+			}
+			else {
+				$('.uno').css('top', '10em').css('position', 'fixed');
+				$('.dos').css('top', '13em').css('position', 'fixed');
+				$('.tres').css('top', '18em').css('position', 'fixed');
+				$('.quatro').css('top', '20em').css('position', 'fixed');
+				$('.cinco').css('top', '26em').css('position', 'fixed');
+				$('.seis').css('top', '28em').css('position', 'fixed');
+				$('.siete').css('top', '35em').css('position', 'fixed');
+				$('.ocho').css('top', '37em').css('position', 'fixed');
+			}
 		}
 
 		if (scroll > 0) {
@@ -69,48 +61,48 @@ $(window).load(function() {
 		else {
 			$('.uno').hide();
 		}
-		if (scroll > 100) {
+		if (scroll > 80) {
 			$('.dos').show();
 		}
 		else {
 			$('.dos').hide();
 		}
-		if (scroll > 160) {
+		if (scroll > 120) {
 			$('.tres').show();
 		}
 		else {
 			$('.tres').hide();
 		}
-		if (scroll > 220) {
+		if (scroll > 190) {
 			$('.quatro').show();
 		}
 		else {
 			$('.quatro').hide();
 		}
-		if (scroll > 290) {
+		if (scroll > 240) {
 			$('.cinco').show();
 		}
 		else {
 			$('.cinco').hide();
 		}
-		if (scroll > 360) {
+		if (scroll > 300) {
 			$('.seis').show();
 		}
 		else {
 			$('.seis').hide();
 		}
-				if (scroll > 400) {
+		if (scroll > 360) {
 			$('.siete').show();
 		}
 		else {
 			$('.siete').hide();
 		}
-				if (scroll > 460) {
+		if (scroll > 400) {
 			$('.ocho').show();
 		}
 		else {
 			$('.ocho').hide();
 		}
 	});
-	
+
 });
