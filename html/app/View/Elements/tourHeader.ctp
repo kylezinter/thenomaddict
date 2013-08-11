@@ -1,8 +1,8 @@
 	<header class="tourHero">
-		<img src="images/Cuba.jpg" class="full heroImage" />
+		<?php echo '<img src="images/'.$tourName.'.jpg" class="full heroImage" />' ?>
 		<h1 class="innerTourName">
 			<?php
-			echo $tour;
+			echo $cityName;
 			?>
 		</h1>
 	</header>

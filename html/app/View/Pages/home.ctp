@@ -16,21 +16,30 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+App::uses('HttpSocket', 'Network/Http');
+$nomaddict_config = Configure :: read('connection');
+
+$http = new HttpSocket();
+$url = $nomaddict_config['tours-db'];
+$response = $http->get($url);
+
+$json = json_decode($response);
+
 ?>
 
 <?php 
 echo $this->element('header');
 ?>
-	<section class="tourWall">
-		<a class="tourTile full" href="Havana">
-			<img class="full" src="images/Cuba.jpg" />
-			<span class="tourName">HAVANA, CUBA</span>
-		</a>
-		<a class="tourTile full" href="Boston">
-			<img class="full" src="images/Boston.jpg" />
-			<span class="tourName">BOSTON, MA, USA</span>
-		</a>
-	</section>
+<section class="tourWall">
+	<?php foreach($json as $key => $value)
+	{
+		echo '<a class="tourTile full" href="'.$value->tourName.'">';
+		echo '<img class="full" src="images/'.$value->tourName.'.jpg" />';
+		echo '<span class="tourName">'.$value->cityName.'</span>';
+		echo '</a>';
+	}
+	?>
+</section>
 <?php
 echo $this->element('footer');
 ?>

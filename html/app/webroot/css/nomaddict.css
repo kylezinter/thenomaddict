@@ -73,7 +73,7 @@ a, a:link, a:visited, a:active {
 footer {
 	font-size: 1.5em;
 	text-align: center;
-	background-color: rgba(255,100,0,.4);
+	background-color: rgba(216, 255, 0, .8);
 	padding:2em 0;
 }
 
@@ -106,7 +106,12 @@ footer {
 	left:5%;
 	font-size: 8em;
 	color: white;
-	background-color: rgba(255,100,0,.4);
+	background-color: rgba(216, 255, 0, .5);
+	text-transform: uppercase;
+}
+
+.tourWall {
+	overflow: auto;
 }
 
 .full {

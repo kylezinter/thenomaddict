@@ -7,10 +7,13 @@ $(window).load(function() {
 	$(window).on("scroll", function() {
 		var scroll = $(window).scrollTop();
 		var windowHeight = $(window).height();
-		var bottomOfLogo = $('.logoContainer').offset().top+$('.logoContainer').outerHeight(true);
+		var footHeight = $('.uno').outerHeight(true);
+		var logoHeight = $('.logoContainer').outerHeight(true);
+		var bottomOfLogo = $('.logoContainer').offset().top+logoHeight;
 		var bottomOfHeader = $('.homeHeader').offset().top+$('.homeHeader').outerHeight(true);
+		bottomOfHeader -= 60;
 
-		if (scroll+$('.logoContainer').outerHeight(true) > bottomOfHeader) {
+		if (scroll+logoHeight > bottomOfHeader) {
 			var top = $('.logoContainer').offset().top;
 			var unotop = $('.uno').offset().top;
 			var dostop = $('.dos').offset().top;
@@ -21,17 +24,17 @@ $(window).load(function() {
 			var sietetop = $('.siete').offset().top;
 			var ochotop = $('.ocho').offset().top;
 
-			$('.logoContainer').css('top', top).css('position', 'absolute');
-			$('.uno').css('top', unotop).css('position', 'absolute');
-			$('.dos').css('top', dostop).css('position', 'absolute');
-			$('.tres').css('top', trestop).css('position', 'absolute');
-			$('.quatro').css('top', quatrotop).css('position', 'absolute');
-			$('.cinco').css('top', cincotop).css('position', 'absolute');
-			$('.seis').css('top', seistop).css('position', 'absolute');
-			$('.siete').css('top', sietetop).css('position', 'absolute');
-			$('.ocho').css('top', ochotop).css('position', 'absolute');
+			$('.logoContainer').css('top', bottomOfHeader-logoHeight).css('position', 'absolute');
+			$('.uno').css('top', bottomOfHeader-(footHeight*.25)).css('position', 'absolute');
+			$('.dos').css('top', bottomOfHeader).css('position', 'absolute');
+			$('.tres').css('top', bottomOfHeader+(footHeight)).css('position', 'absolute');
+			$('.quatro').css('top', bottomOfHeader+(footHeight*1.25)).css('position', 'absolute');
+			$('.cinco').css('top', bottomOfHeader+(footHeight*2)).css('position', 'absolute');
+			$('.seis').css('top', bottomOfHeader+(footHeight*2.25)).css('position', 'absolute');
+			$('.siete').css('top', bottomOfHeader+(footHeight*3)).css('position', 'absolute');
+			$('.ocho').css('top', bottomOfHeader+(footHeight*3.25)).css('position', 'absolute');
 		}
-		if (scroll+$('.logoContainer').outerHeight(true) < bottomOfHeader) {
+		if (scroll+logoHeight < bottomOfHeader) {
 			$('.logoContainer').css('top', '2%').css('position', 'fixed');
 			if (windowHeight > 448) {
 				$('.uno').css('top', '29em').css('position', 'fixed');
